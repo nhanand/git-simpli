@@ -1,0 +1,282 @@
+17 march 
+---------
+
+==========================================================================================
+sudo su -      // for going to root directory and u have all the access
+mkdir anand        // for creating folder
+touch anand.txt    // dummy file                                                              // touch is linux command
+vi login.txt enter  // for opening in vi editor
+press enter i //for writing code
+:wq           // for exit from vi code editor
+git init
+ls -a   // for hidden files
+===========================================================================================
+
+===========================================================================================
+
+--------------for config------------------------------
+git config --global user.name anand
+git config --global user.email anand@gmail.com
+--------------------------------------------------------
+
+git config --global --unset user.name //for unset the suer name
+git config --global --unset user.email // for unset the email
+---------------------------------------------------------------
+============================================================================================
+
+24 march 
+--------
+
+git -- version control system 
+
+image plz refer image24.1
+
+sudo su -
+mkdir myproject_wd
+cd myproject_wd
+clear
+pwd     // grabbing the path in linux
+
+git config --list // to check the list
+
+git config --global user.name nhanand
+git config --global user.email nhanand@hmail.com
+
+git config --list
+
+touch file.txt touch q.php
+ls // to check file created or not
+
+git init // an empty git local repositry
+git init  //.git it is the directory and always hidden
+ls -a     //to see the hidden directory
+
+git add. 
+git commit -m "first commit"  // saving from working to loacal directory
+
+git status
+
+git log // to see the commit
+git log --oneline // how many commit
+git ls -a // to see the hidden commit
+
+==============================================================================
+
+git ignore
+
+ls 
+
+rabbit.txt anand.php a.log b.xml
+
+nano rabbit.txt or vi rabbit.php  //:wq to escape from vi editor
+
+in editor 
+
+write some code
+
+ctrl x 
+
+y enter
+
+now create an file   // 
+
+nano .gitignore
+hit enter
+add filesi the editor like
+*.log
+*.xml
+ ctrl  enter
+
+the file will be ignored
+
+ls -a // to see the git ignored files
+
+note log and xml file will not go into staging area
+
+==========================git part completed ====================================
+
+
+                              GITHUB
+                             --------
+
+go to github 
+signup 
+
+======================================================================================================================================
+SSH COMMAND - generate key to connect from local to remote repositry
+
+****** imp********
+ssh-keygen   enter // generate the on terminal
+enter
+enter
+
+you will get RSA TYPE KEY
+
+cat /root/.ssh/id_rsa.pub    hit enter     // for windows go to the file directory and copy the key. else everthing is same as ubuntu 
+ you will get ssh key
+
+add this key to ssh in github 
+
+seettings -> ssh and gpg key 
+
+-----------------------------------------------
+
+Step 1: generate SSH keys:
+
+Go to lab terminal
+
+# cd
+
+# ssh-keygen
+
+dont enter any thing.. just keep pressing enter for 3 times
+
+You key will generated
+
+The public key can be seen by exeucting below commad:
+
+# cat /root/.ssh/id_rsa.pub
+
+Step 2:
+
+Copy the key carefully
+
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC7MWRf5oD4jXnFIvIfpZlBvUpb/fiR3WpFiAnZJZ7hYeD7G+WPKjQ5FaYTl7m6g+h4kSwa1VwyoMnjBm/+rdc3r1nVH+HujpBxa39+5tM0pYHFNP/UOc1dqWpOjAZlM3j5OuoTNvBZqZ+vvQ5XQGXHXlk5MtOjxO91rEOqpWuqYewXT9L535vprwavlOKKAEpIKKyNXCITSc4kTiLz9uSVS9utDEnByI9ohYK83DxGcPK2gNlie6vgaM9IdFeTRgJ+538QmzHiHAwAhcRcPBjIRCRisWWiRL6HpYs0e5l1Z1CtHwC2VAb4Ui5vXDmXSP/kPZtWGCEwsX6RLKmonZE7 root@ip-172-31-22-237
+
+Step 3: paste it on git hub
+
+Step 4: Create a remote repository
+
+===========================================================================================================================================
+
+
+
+--------------------------------------------------------------------------------
+
+make repository in github
+
+copy ssh key 
+ and on terminal 
+git remote add origin (copied ssh key from repoistory)
+enter
+
+to check weather connected or not 
+
+git remote -v 
+
+
+--------------------------------------------------------------------------------
+
+
+come on terminal 
+
+go to your project foler by cd project_name
+
+---------------------------
+
+git remote add  origin  (CREATE REPOSITORY AFTER THAT YOU WILL GET THE SSH PATH  0R PROFILE SETTINGS SSH AND GPG KEY)
+
+git remote -v
+
+---------------------------- 
+
+git push origin master
+
+===================*********=====================
+
+30 march 2024
+-------------
+how to delete a file after commit
+------------------------------------
+git ls-files   // files on git repository
+==============================================
+** git rm file.txt  remove an individual file
+==============================================
+
+how to restore the file
+-------------------------
+
+imp
+============================================
+git log --oneline // to get the commit id 
+then git commit -m "commit after delete"
+git log --oneline
+git revert commit_id
+the deleted file will be restored
+=============================================
+
+===========================================
+if not push the code
+git checkout -b "new branch name"
+then git push
+============================================
+
+for taking pull
+------------------
+
+========================================================
+add files on github - from github in the same repository
+then take a pull 
+git pull origin master
+========================================================
+
+branch
+------
+==================================================
+on master branch
+
+- git branch
+- git branch feature_1
+ -- do all the prev procedre like git add , commit , push.
+- git ls-files // to see the files
+-git merge feature1   // in master we will merge the feature branch
+======================================================
+
+======================================================
+rebasing  (another way to merge)
+--------------------------------
+
+note : it is a good way because logs are maintained properly.
+
+-git branch -d feature1 // git branch delete
+-git reset --hard commit_id // to clear the log
+now on master branch
+-git branch -b n_branch // to create a new branch from base branch
+
+-git rebase master // it will merge the feature branch into master. always derived branch into master branch
+
+========================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
